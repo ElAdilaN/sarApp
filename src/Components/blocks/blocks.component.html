@@ -1,0 +1,13 @@
+<div class="blocks">
+  <button
+    *ngFor="let category of dataService.categories"
+    (click)="showImages(category.name)"
+  >
+    {{ category.name }}
+  </button>
+</div>
+
+<app-image-grid
+  *ngIf="selectedCategory"
+  [category]="selectedCategory"
+></app-image-grid>
