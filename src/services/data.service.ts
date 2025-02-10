@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DataService {
-  categories = [
+  categories: { name: string; images: string[]; sounds: string[] }[] = [
     { name: 'accions', images: [], sounds: [] },
     { name: 'emocions', images: [], sounds: [] },
     { name: 'necessitats', images: [], sounds: [] },
@@ -41,15 +41,14 @@ export class DataService {
   }
 
   getSoundForImage(image: string): string | undefined {
-    /* for (const category of this.categories) {
+    for (const category of this.categories) {
       const index = category.images.indexOf(image);
       if (index !== -1) {
         return category.sounds[index];
       }
-    } */
+    }
     return undefined;
   }
-
   private getImageFiles(category: string): string[] {
     const imageFiles: { [key: string]: string[] } = {
       accions: [

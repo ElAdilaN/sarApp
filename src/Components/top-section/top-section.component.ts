@@ -13,13 +13,14 @@ export class TopSectionComponent {
   constructor(public dataService: DataService) {}
 
   playAll() {
-    this.dataService.selectedImages.forEach((image, index) => {
-      const sound = this.dataService.getSoundForImage(image);
-      if (sound) {
-        setTimeout(() => {
-          this.dataService.playSound(sound);
-        }, index * 2000); // Adjust the delay as needed
-      }
+    const sounds = this.dataService.selectedImages
+      .map((image) => this.dataService.getSoundForImage(image))
+      .filter((sound): sound is string => !!sound); // Ensure only valid sound paths
+
+    sounds.forEach((sound, index) => {
+      setTimeout(() => {
+        this.dataService.playSound(sound);
+      }, index * 2000); // 2-second delay per sound
     });
   }
 }

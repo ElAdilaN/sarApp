@@ -4,7 +4,7 @@
       [src]="image"
       (click)="dataService.toggleImage(image)"
       [class.selected]="dataService.selectedImages.includes(image)"
-    />
+    /><br />
     <button (click)="dataService.playSound(sounds[i])">Play</button>
   </div>
 </div>

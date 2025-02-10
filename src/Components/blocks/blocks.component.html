@@ -2,6 +2,7 @@
   <button
     *ngFor="let category of dataService.categories"
     (click)="showImages(category.name)"
+    style="text-transform: uppercase"
   >
     {{ category.name }}
   </button>
