@@ -1,0 +1,23 @@
+/* Ensure the body takes up at least the full height of the viewport */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+/* The footer will be fixed at the bottom of the page */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2d3748; /* Tailwind bg-gray-800 */
+  color: white;
+  text-align: center;
+  padding: 1rem; /* Equivalent to py-4 in Tailwind */
+  font-family: sans-serif; /* Add a clean font */
+}
+
+footer p {
+  margin: 0;
+}
