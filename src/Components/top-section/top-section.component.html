@@ -3,10 +3,19 @@
     <img [src]="image" />
   </div>
 
-  <button
-    (click)="playAll()"
-    class="px-5 py-2.5 bg-green-600 text-white font-bold rounded-xl shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-all"
-  >
-    🎵 Play All
-  </button>
+  <div class="button-group flex gap-4">
+    <button
+      (click)="playAll()"
+      class="px-5 py-2.5 bg-green-600 text-white font-bold rounded-xl shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-all"
+    >
+      🎵 Play All
+    </button>
+    
+    <button
+      (click)="clearImages()"
+      class="px-5 py-2.5 bg-red-600 text-white font-bold rounded-xl shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-all"
+    >
+      ❌ Clear
+    </button>
+  </div>
 </div>

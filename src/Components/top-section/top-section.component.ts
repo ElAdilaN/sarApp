@@ -23,4 +23,7 @@ export class TopSectionComponent {
       }, index * 2000); // 2-second delay per sound
     });
   }
+  clearImages() {
+    this.dataService.selectedImages = [];
+  }
 }
