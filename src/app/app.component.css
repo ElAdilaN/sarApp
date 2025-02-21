@@ -5,7 +5,12 @@ html {
   margin: 0;
 }
 
-/* The footer will be fixed at the bottom of the page */
+/* Main container should have some space at the bottom to make room for the footer */
+.main-content {
+  padding-bottom: 4rem; /* Equivalent to the footer's height */
+}
+
+/* The footer will be fixed at the bottom of the page for larger screens */
 .footer {
   position: fixed;
   bottom: 0;
@@ -16,6 +21,17 @@ html {
   text-align: center;
   padding: 1rem; /* Equivalent to py-4 in Tailwind */
   font-family: sans-serif; /* Add a clean font */
+}
+
+/* On smaller screens, make the footer relative so it doesn't overlap the content */
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+  }
+
+  .main-content {
+    padding-bottom: 0;
+  }
 }
 
 footer p {
